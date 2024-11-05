@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://t357atq835wl"]
+
+[ext_resource type="Texture2D" uid="uid://c2jod7tcefg6m" path="res://svgs/skull-solid.svg" id="1_x6s5j"]
+
+[node name="skull" type="Sprite2D"]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_x6s5j")

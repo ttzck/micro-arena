@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://msgiqba6wubm"]
+
+[ext_resource type="Script" path="res://creep.gd" id="1_1mccs"]
+[ext_resource type="Texture2D" uid="uid://bjy7yh2gcsso3" path="res://svgs/ghost-solid.svg" id="2_ewuf4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kpe4"]
+radius = 196.0
+height = 512.0
+
+[node name="Creep" type="CharacterBody2D"]
+scale = Vector2(0.03, 0.03)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1mccs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.541176, 0.788235, 0.14902, 1)
+texture = ExtResource("2_ewuf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1kpe4")

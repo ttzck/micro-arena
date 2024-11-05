@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkd0ma1i5qqk3"]
+
+[ext_resource type="Script" path="res://bolt.gd" id="1_k20yb"]
+[ext_resource type="Texture2D" uid="uid://cmtli3vkwsgjh" path="res://svgs/bolt-lightning-solid.svg" id="2_k0osy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mf6k5"]
+radius = 325.0
+
+[node name="Bolt" type="Area2D"]
+scale = Vector2(0.02, 0.02)
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_k20yb")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.792157, 0.227451, 1)
+texture = ExtResource("2_k0osy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mf6k5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

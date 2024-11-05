@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsw5mdc3yj4oq"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rg4gc"]
+[ext_resource type="Script" path="res://background.gd" id="2_r0lx5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rg4gc")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_r0lx5")
+color1 = Color(0.04, 0.04, 0.04, 1)
+color2 = Color(0.0431373, 0.0431373, 0.0431373, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 28.0
+text = "99"
+vertical_alignment = 1

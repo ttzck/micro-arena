@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfjvurukya2tm"]
+
+[ext_resource type="Texture2D" uid="uid://dbexfubjdjqcp" path="res://svgs/fire-solid.svg" id="1_1csaw"]
+[ext_resource type="Script" path="res://projectile.gd" id="1_6cbv4"]
+[ext_resource type="Texture2D" uid="uid://bo1u53gqjlsr0" path="res://svgs/arrow-up-long-solid.svg" id="3_otioc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u73e3"]
+radius = 160.0
+height = 516.0
+
+[node name="Projectile" type="CharacterBody2D"]
+modulate = Color(0.0980392, 0.509804, 0.768627, 1)
+scale = Vector2(0.02, 0.02)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_6cbv4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_u73e3")
+
+[node name="Fire-solid" type="Sprite2D" parent="."]
+visible = false
+rotation = -1.5708
+texture = ExtResource("1_1csaw")
+
+[node name="Arrow-up-long-solid" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("3_otioc")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjhgbmfl67ggf"]
+
+[ext_resource type="Script" path="res://unit.gd" id="1_lljaw"]
+[ext_resource type="Texture2D" uid="uid://cclpi42k7m7p1" path="res://svgs/child-solid.svg" id="2_rloqn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pbabg"]
+font_size = 160
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kpe4"]
+radius = 6.0
+height = 25.0
+
+[node name="Unit" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_lljaw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -143.0
+offset_top = -232.0
+offset_right = 143.0
+offset_bottom = -13.0
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(143, 219)
+text = "KEY"
+label_settings = SubResource("LabelSettings_pbabg")
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1kpe4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0980392, 0.509804, 0.768627, 1)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_rloqn")
+
+[node name="Mask" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -14.0
+offset_right = 10.0
+offset_bottom = 14.0
+pivot_offset = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mask"]
+modulate = Color(1, 0.34902, 0.368627, 1)
+position = Vector2(10, 14)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_rloqn")
